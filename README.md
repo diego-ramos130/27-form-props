@@ -2,6 +2,7 @@
 ===
 
 ## Overview
+React JS showcase demonstrating control over props and state. If you enter in a valid reddit topic, it shows the user how many posts they want to see on submit.
 
 ## Usage
 Requires: NodeJS and NPM (as well as git).
