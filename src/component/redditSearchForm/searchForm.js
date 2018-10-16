@@ -5,11 +5,14 @@ class RedditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.state.subredditName = this.props.subreddit.name || '';
-    this.state.postlimit = 10;
+    this.state.subredditName = '';
+    this.state.postlimit = 1;
   }
-  handleChange = event => {
+  handleNameChange = event => {
     this.setState({subredditName: event.target.value});
+  };
+  handlePostChange = event => {
+    this.setState({postlimit: event.target.value});
   };
   handleSearch = event => {
     event.preventDefault();
@@ -18,8 +21,8 @@ class RedditForm extends React.Component {
   render() {
     return (
     <form onSubmit={this.handleSearch}>
-      <input name='subredditName' value={this.state.subredditName} onChange={this.handleChange} type='text'/>
-      <input name='postlimit' value={this.state.postlimit} onChange={this.handleChange} type='number'/>
+      <input name='subredditName' value={this.state.subredditName} onChange={this.handleNameChange} type='text'/>
+      <input name='postlimit' value={this.state.postlimit} onChange={this.handlePostChange} type='number'/>
       <button type="submit"> Search Subreddit</button>
     </form>
     );
